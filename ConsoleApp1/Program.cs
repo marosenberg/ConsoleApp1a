@@ -19,6 +19,7 @@ namespace ConsoleApp1
                     Console.Write("That wasn't a real number try again ");
                     continue;
                 }
+                
                 //radius = double.Parse(sRadius);
                 double area = radius * radius * Math.PI;
                 Console.WriteLine($"The area of a circle of radius {radius:F3} is {area:F3} ");
