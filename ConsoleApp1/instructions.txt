@@ -1,0 +1,1 @@
+Create a console app that asks the user for input and then displays whatever the user typed. No loops, no data conversion
