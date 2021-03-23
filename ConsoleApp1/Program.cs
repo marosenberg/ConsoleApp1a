@@ -6,20 +6,24 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            double radius, area;
-            Console.Write("Please enter a radius: ");
-            string sRadius = Console.ReadLine();
-            bool success = double.TryParse(sRadius, out radius);
-            if(!success)
+            while (true)
             {
-                Console.Write("That wasn't a real number ");
-                return;
+                Console.Write("Please enter a radius: ");
+                string sRadius = Console.ReadLine();
+                if (sRadius == "Ex")
+                {
+                    return;
+                }
+                if (!double.TryParse(sRadius, out double radius))
+                {
+                    Console.Write("That wasn't a real number try again ");
+                    continue;
+                }
+                //radius = double.Parse(sRadius);
+                double area = radius * radius * Math.PI;
+                Console.WriteLine($"The area of a circle of radius {radius:F3} is {area:F3} ");
+                Console.ReadKey();
             }
-            //radius = double.Parse(sRadius);
-            area = radius * radius * Math.PI;
-            Console.WriteLine($"The area of a circle of radius {radius:F3} is {area:F3} ");
-            Console.ReadKey();
-            
         }
     }
 }
