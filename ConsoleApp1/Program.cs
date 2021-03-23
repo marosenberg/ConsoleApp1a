@@ -7,24 +7,31 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            while (true)
+            bool stop = false;
+            while (!stop)
             {
-                Console.Write("Please enter a radius: ");
-                string sRadius = Console.ReadLine();
-                if (sRadius == "Ex")
+                Console.Write("Please enter a number to calculate square root: ");
+                string sSquare = Console.ReadLine();
+                if (sSquare == "q")
                 {
-                    return;
-                }
-                if (!double.TryParse(sRadius, out double radius))
-                {
-                    Console.Write("That wasn't a real number try again ");
+                    stop = true;
                     continue;
                 }
-                
-                //radius = double.Parse(sRadius);
-                double area = radius * radius * Math.PI;
-                Console.WriteLine($"The area of a circle of radius {radius:F3} is {area:F3} ");
-                Console.ReadKey();
+                if (!double.TryParse(sSquare, out double square))
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.Write("That wasn't a real number try again ");
+                    
+                    continue;
+                }
+                if (square < 0)
+                {
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.Write("Don't use negative numbers ");
+                    continue;
+                }
+                double area = Math.Sqrt(square);
+                Console.WriteLine($"The square root of {square:F3} is {area:F3} ");
 
             }
         }
