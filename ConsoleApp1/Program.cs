@@ -7,9 +7,17 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-           Console.Write("Please enter some text: ");
-           string sSquare = Console.ReadLine();
-           Console.WriteLine($"You typed {sSquare}");
+            while (true)
+            {
+                Console.Write("Please enter some text: ");
+                var sSquare = Console.ReadLine();
+                if (sSquare.ToLower() == "q")
+                {
+                    return;
+                }
+                Console.WriteLine("");
+                Console.WriteLine($"You typed {sSquare}");
+            }
         }
     }
 }

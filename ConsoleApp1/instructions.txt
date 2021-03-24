@@ -1,1 +1,3 @@
-Create a console app that asks the user for input and then displays whatever the user typed. No loops, no data conversion
+Ex 1: Create a console app that asks the user for input and then displays whatever the user typed. No loops, no data conversion
+
+Ex 2: Add code so the app can ask the user more than once for input, and close the application if they type q
