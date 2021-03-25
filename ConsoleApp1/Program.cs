@@ -12,10 +12,17 @@ namespace ConsoleApp1
             {
                 Console.Write("Please enter some text: ");
                 var sSquare = Console.ReadLine();
-                if (sSquare.ToLower() == "q")
+                if (sSquare == "q"  || sSquare == "Q")
                 {
                     exit = !exit;
                 }
+                double square;
+                bool result = double.TryParse(sSquare, out square);
+                if (!result)
+                {
+                    Console.WriteLine();
+                }
+
                 Console.WriteLine("");
                 Console.WriteLine($"You typed {sSquare}");
             }
