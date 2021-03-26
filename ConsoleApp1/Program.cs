@@ -7,31 +7,39 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            bool exit = false;
-            while (!exit)
-            {
-                Console.Write("Please enter some text: ");
-                var sSquare = Console.ReadLine();
-                if (sSquare == "q"  || sSquare == "Q")
-                {
-                    exit = !exit;
-                }
-                double square;
-                bool result = double.TryParse(sSquare, out square);
-                if (!result)
-                {
-                    Console.WriteLine();
-                }
-
-                WriteConsole("");
-                WriteConsole($"You typed {sSquare}");
-            }
+            //myStruct mystruct = new myStruct();
+            myClass mystruct = new myClass();
+            mystruct.MyInt1 = 5;
+            mystruct.MyInt2 = 6;
+            Console.WriteLine($"Before myMethod MyInt1: " +
+                $"{mystruct.MyInt1} and MyInt2: {mystruct.MyInt2}");
+            myMethod(mystruct);
+            Console.WriteLine($"After myMethod MyInt1: " +
+                $"{mystruct.MyInt1} and MyInt2: {mystruct.MyInt2}");
+            
             
         }
 
-        static void WriteConsole(string text)
+        private static void myMethod(myClass myStruct)
         {
-            Console.WriteLine(text);
+            Console.WriteLine($"In myMethod, before change, MyInt1: " +
+                $"{myStruct.MyInt1} and MyInt2: {myStruct.MyInt2}");
+            myStruct.MyInt1 = 10;
+            Console.WriteLine($"In myMethod, after change, MyInt1: " +
+                $"{myStruct.MyInt1} and MyInt2: {myStruct.MyInt2}");
+
+
+        }
+
+        public struct myStruct
+        {
+            public int MyInt1 { get; set; }
+            public int MyInt2 { get; set; }
+        }
+        public class myClass
+        {
+            public int MyInt1 { get; set; }
+            public int MyInt2 { get; set; }
         }
     }
 }
