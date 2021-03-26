@@ -23,9 +23,15 @@ namespace ConsoleApp1
                     Console.WriteLine();
                 }
 
-                Console.WriteLine("");
-                Console.WriteLine($"You typed {sSquare}");
+                WriteConsole("");
+                WriteConsole($"You typed {sSquare}");
             }
+            
+        }
+
+        static void WriteConsole(string text)
+        {
+            Console.WriteLine(text);
         }
     }
 }
