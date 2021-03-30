@@ -17,6 +17,7 @@ namespace ConsoleApp1
             get
             {
                 return firstName + " " + lastName;
+                
             }
         }
         public int MyProperty

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 
 namespace ConsoleApp1
@@ -7,17 +8,13 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //myStruct mystruct = new myStruct();
-            myClass mystruct = new myClass();
-            mystruct.MyInt1 = 5;
-            mystruct.MyInt2 = 6;
-            Console.WriteLine($"Before myMethod MyInt1: " +
-                $"{mystruct.MyInt1} and MyInt2: {mystruct.MyInt2}");
-            myMethod(mystruct);
-            Console.WriteLine($"After myMethod MyInt1: " +
-                $"{mystruct.MyInt1} and MyInt2: {mystruct.MyInt2}");
-            
-            
+           ArrayList myList = new ArrayList { "A", 1, 1.5, "D"};
+            myList.Add(1.35M);
+            myList.Remove("A");
+            foreach (var item in myList)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void myMethod(myClass myStruct)
