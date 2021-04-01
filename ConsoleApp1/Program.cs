@@ -8,16 +8,17 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-           ArrayList myList = new ArrayList { "A", 1, 1.5, "D"};
-            myList.Add(1.35M);
-            myList.Remove("A");
-            foreach (var item in myList)
-            {
-                Console.WriteLine(item);
-            }
+            myStruct c = new myStruct();
+            c.MyInt1 = 100;
+            c.MyInt2 = 200;
+            Console.WriteLine($"In Main, before change, MyInt1: " +
+                $"{c.MyInt1} and MyInt2: {c.MyInt2}");
+            myMethod(ref c);
+            Console.WriteLine($"In Main, after change, MyInt1: " +
+                $"{c.MyInt1} and MyInt2: {c.MyInt2}");
         }
 
-        private static void myMethod(myClass myStruct)
+        private static void myMethod(ref myStruct myStruct)
         {
             Console.WriteLine($"In myMethod, before change, MyInt1: " +
                 $"{myStruct.MyInt1} and MyInt2: {myStruct.MyInt2}");
